@@ -8,8 +8,8 @@ function Showcase() {
   return (
     <div>
       <Projects/>
-      <Testimonals/>
       <Service/>
+      <Testimonals/>
     </div>
   )
 }

@@ -10,7 +10,7 @@ import './style.css'
 function App() {
   return (
     <div className="app-root">
-     <TsParticlesBg />
+     {/* <TsParticlesBg /> */}
       <div className="content">
       <Navbar /> 
       <Home />

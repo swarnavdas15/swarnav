@@ -26,22 +26,22 @@ const TsParticlesBg = () => {
     fpsLimit: 60,
     particles: {
       number: { value: 60, density: { enable: true, area: 800 } },
-      color: { value: '#f7f5f1ff' },
+      color: { value: '#ed3103ff' },
       shape: { type: 'circle' },
-      opacity: { value: 0.6 },
+      opacity: { value: 0.8 },
       size: { value: { min: 1, max: 6 }, random: true },
-      links: { enable: true, distance: 140, color: '#efe1e1ff', opacity: 0.3, width: 1 },
+      links: { enable: true, distance: 200, color: '#d30303ff', opacity: 0.9, width: 2 },
       move: { enable: true, speed: 0.3, outModes: { default: 'out' } }
     },
     interactivity: {
       detectsOn: 'window',
       events: {
-        onHover: { enable: true, mode: 'repulse' },
+        onHover: { enable: true, mode: 'grab' },
         onClick: { enable: true, mode: 'push' },
         resize: true
       },
       modes: {
-        repulse: { distance: 45 },
+        grab: { distance: 200, links: { opacity: 1 } },
         push: { quantity: 2 }
       }
     },

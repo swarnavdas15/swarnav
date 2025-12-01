@@ -1,0 +1,125 @@
+.projects-section {
+  padding: 5rem 5rem;
+}
+
+.projects-section h2 {
+  text-align: center;
+  font-size: 3rem;
+  background: linear-gradient(45deg, #d54d9c, #d90202);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 4rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,212,255,0.2);
+}
+
+.card h3 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 1rem;
+}
+
+.tech {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.tech span {
+  background: rgba(0,212,255,0.3);
+  color: #00d4ff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.btn {
+  flex: 1;
+  padding: 1rem 1rem;
+  border-radius: 25px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #00d4ff, #0099cc);
+  color: #000;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #00d4ff;
+  border: 1px solid #00d4ff;
+}
+
+.btn-secondary:hover {
+  background: #00d4ff;
+  color: #000;
+}
+.projects-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.grid {
+  margin-bottom: 2rem;
+}
+
+.btn-view-all {
+  background: transparent;
+  border: 2px solid #b8e4ed;
+  color: #fefefe;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 2%;
+  border-radius: 25px;
+}
+
+.btn-view-all:hover {
+  background: linear-gradient(45deg, #d54d9c, #d90202);
+  color: #fdfcfc;
+  transform: scale(1.05);
+}

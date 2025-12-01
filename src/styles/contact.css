@@ -1,0 +1,80 @@
+        /* Layout */
+        .split-wrap{ display:grid; grid-template-columns: 1fr; gap:20px; align-items:center; max-width:1100px; margin:28px auto; padding:10px; }
+        @media(min-width:720px){ .split-wrap{ grid-template-columns: 360px 1fr; gap:28px; } }
+
+        /* ---------- Left: Card (from Uiverse by Ashon-G) ---------- */
+        .card { position: relative; height: 300px; width: 230px; margin:0 auto; }
+        .card:nth-child(2) { filter: hue-rotate(300deg) brightness(1.3); }
+        .card:nth-child(3) { filter: hue-rotate(200deg) brightness(1.5); }
+        .card:nth-child(4) { filter: hue-rotate(60deg) brightness(3); }
+        .card .boxshadow { position: absolute; height: 77%; width: 77%; border: 1px solid rgb(0, 217, 255); transform: scale(1); box-shadow: rgb(0, 217, 255) 0px 30px 70px 0px; transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+        .card .main { width: 15vw; height: 60vh; overflow: hidden; background: linear-gradient(0deg, #3e0000 0%, rgb(0, 247, 255) 60%, #3e0000 100%); position: relative; clip-path: polygon(0 0, 100% 0, 100% 40px, 100% calc(100% - 40px), calc(100% - 40px) 100%, 40px 100%, 0 calc(100% - 40px)); box-shadow: rgb(0, 132, 255) 0px 7px 29px 0px; transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+        .card .main .top { position: absolute; top: 0px; left: 0; width: 0px; height: 0px; z-index: 2; border-top: 115px solid black; border-left: 115px solid transparent; border-right: 115px solid transparent; transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+        .card .main .side { position: absolute; width: 100%; top: 0; transform: translateX(-50%); height: 101%; background: black; clip-path: polygon(0% 0%, 50% 0, 95% 45%, 100% 100%, 0% 100%); transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1s; }
+        .card .main .left { left: 0; }
+        .card .main .right { right: 0; transform: translateX(50%) scale(-1, 1); }
+        .card .main .title { position: absolute; left: 50%; transform: translateX(-50%); top: 90px; font-weight: bold; font-size: 25px; opacity: 0; z-index: -1; transition: all 0.2s ease-out 0s; }
+        .card .main .button-container { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); }
+        .card .main .button-container .button { position: absolute; transform: translateX(-50%); padding: 5px 10px; clip-path: polygon(0 0, 100% 0, 81% 100%, 21% 100%); background: black; border: none; color: white; display: grid; place-content: center; transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+        .card .main .button-container .button .svg { width: 15px; transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+        .card .main .button-container .button:nth-child(1) { bottom: 300px; transition-delay: 0.4s; }
+        .card .main .button-container .button:nth-child(2) { bottom: 300px; transition-delay: 0.6s; }
+        .card .main .button-container .button:nth-child(3) { bottom: 300px; transition-delay: 0.8s; }
+        .card .main .button-container .button:hover .svg { transform: scale(1.2); }
+        .card .main .button-container .button:active .svg { transform: scale(0.7); }
+        .card:hover .main { transform: scale(1.1); }
+        .card:hover .main .top { top: -50px; }
+        .card:hover .main .left { left: -50px; transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.1s; }
+        .card:hover .main .right { right: -50px; transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.1s; }
+        .card:hover .main .title { opacity: 1; transition: all 0.2s ease-out 1.3s; }
+        .card:hover .main .button-container .button:nth-child(1) { bottom: 80px; transition-delay: 0.8s; }
+        .card:hover .main .button-container .button:nth-child(2) { bottom: 40px; transition-delay: 0.6s; }
+        .card:hover .main .button-container .button:nth-child(3) { bottom: 0; transition-delay: 0.4s; }
+
+        /* make the card area horizontally centered on small screens */
+        @media(max-width:719px){ .card { margin-left:auto; margin-right:auto; } }
+
+        /* ---------- Right: Contact form (kept creative & transparent) ---------- */
+        .creative { background: rgba(9,10,14,0.36); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); border-radius:14px; padding:18px; color:rgba(255,255,255,0.96); box-shadow: 0 10px 30px rgba(2,6,23,0.45); }
+        .creative .title{ font-size:18px; font-weight:800; margin:0 0 6px; }
+        .creative .sub{ margin:0 0 12px; color: rgba(255,255,255,0.72); font-size:13px; }
+        .creative form{ display:grid; gap:10px; }
+        .creative .field{ position:relative; }
+        .creative input.cf, .creative textarea.cf{ width:100%; padding:12px 12px 10px 44px; border-radius:10px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.04); color:inherit; font-size:14px; box-sizing:border-box; transition: transform 180ms cubic-bezier(.2,.8,.2,1), box-shadow 160ms ease, border-color 160ms ease; }
+        .creative select.cf {
+          width: 100%;
+          padding: 12px 32px 10px 16px;
+          border-radius: 8px;
+          background: rgba(9, 10, 14, 0.4);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          color: white;
+          font-size: 14px;
+          appearance: none;
+          transition: all 0.2s ease;
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+          background-repeat: no-repeat;
+          background-position: right 12px center;
+          background-size: 16px;
+        }
+        
+        .creative select.cf:focus {
+          outline: none;
+          border-color: #06b6d4;
+          box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.2);
+        }
+        
+        .creative .label-text{ position:absolute; left:16px; top:-8px; font-size:12px; background: rgba(9, 10, 14, 0.8); padding: 0 8px; color: #a78bfa; pointer-events:none; transform: translateY(0); transition: transform 140ms ease, color 140ms ease; }
+        .creative .underline{ position:absolute; left:16px; right:12px; bottom:0; height:2px; background: linear-gradient(90deg, #a78bfa, #06b6d4); transform-origin:left center; transform: scaleX(0); transition: transform 240ms cubic-bezier(.2,.9,.2,1); }
+        .creative .field:focus-within .underline, .creative .field input.cf:not(:placeholder-shown) ~ .underline, .creative .field textarea.cf:not(:placeholder-shown) ~ .underline{ transform: scaleX(1); }
+        .creative .actions{ display:flex; gap:12px; align-items:center; justify-content:space-between; margin-top:6px; }
+        .creative .btn{ padding:10px 16px; border-radius:12px; border:none; font-weight:700; cursor:pointer; background: linear-gradient(90deg, #a78bfa, #06b6d4); color:white; box-shadow: 0 12px 30px rgba(3,7,18,0.6); transition: transform 160ms cubic-bezier(.2,.8,.2,1), filter 160ms ease; }
+        .creative .btn:active{ transform: translateY(1px); }
+        .creative .btn[disabled]{ opacity:0.6; cursor:default; }
+        .creative .spark{ position:absolute; right:12px; top:-6px; width:36px; height:36px; pointer-events:none; opacity:0; transform: scale(0.6); border-radius:50%; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(255,255,255,0.15) 30%, transparent 55%); transition: transform 420ms cubic-bezier(.2,.8,.2,1), opacity 320ms ease; }
+        .creative .btn.sent + .spark{ opacity:1; transform: scale(1.1); }
+        .creative .status{ font-size:13px; color: rgba(255,255,255,0.82); }
+        .creative .ok{ color:#34d399; font-weight:700; }
+        .creative .err{ color:#fb7185; font-weight:700; }
+
+        /* reduced motion */
+        @media (prefers-reduced-motion: reduce){ *{ transition:none !important; animation:none !important; } }
