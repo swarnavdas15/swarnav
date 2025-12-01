@@ -1,10 +1,13 @@
 import React from 'react'
 import '../styles/footer.css'
+
 function Footer() {
   return (
-    <div>
-      
-    </div>
+    <footer className="footer">
+      <div className="footer-content">
+        <p className="footer-text">Made with passion , all right reserved by Swarnav Das &copy; 2025</p>
+      </div>
+    </footer>
   )
 }
 

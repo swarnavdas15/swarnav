@@ -8,16 +8,13 @@ function Testimonals() {
         <div className="testimonials-grid">
           <div className="testimonial-card">
             <blockquote>"Amazing work on web development and security testing!"</blockquote>
-            <cite>- Jane Doe, CTO</cite>
+            <cite>- Chandrabhan, (President DIV)</cite>
           </div>
           <div className="testimonial-card">
             <blockquote>"Professional consultancy and network solutions."</blockquote>
-            <cite>- Mike Johnson, IT Dir</cite>
+            <cite>- Deepak Kumar, DBA</cite>
           </div>
-          <div className="testimonial-card">
-            <blockquote>"Top-notch penetration testing services."</blockquote>
-            <cite>- Sarah Lee, Founder</cite>
-          </div>
+          
         </div>
       </div>
     </section>

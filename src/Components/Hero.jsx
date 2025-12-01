@@ -6,7 +6,7 @@ function Hero() {
     <div className='hero'>
       <div className="intro">
         <h1 className="hero-name">Welcome to DEV-HUB !</h1>
-        <p className="hero-description">Working For Expertise. </p>
+        <p className="hero-description">Ideas. Crafted. Experienced </p>
       </div>
     </div>
   )

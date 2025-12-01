@@ -56,7 +56,7 @@ function About() {
   const currentProfile = profiles[activeIndex];
 
   return (
-    <div className='about'>
+    <div className='about' id="about">
       <div
         className={`about-cont ${isLayoutSwapped ? 'layout-swapped' : ''}`}
         ref={aboutRef}

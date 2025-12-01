@@ -3,19 +3,177 @@
     padding: 50px;
     text-align: center;
     height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .intro{
     margin: 35%;
     font-size: 1.5rem;
     color: #d4d2d2;
+    max-width: 800px;
+    width: 100%;
+    margin-top: 60rem;
 }
 .hero h1{
     font-size: 2.2rem;
     color: #f1e9e9;
     margin-top: 20px;
+    line-height: 1.2;
 }
 .hero-description{
-    margin-top: 15px;
+    margin-top: 20px;
     font-size: 1.2rem;
     color: #d4d2d2;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments for hero section */
+@media screen and (max-width: 1200px) {
+    .hero {
+        height: 90vh;
+    }
+    
+    .intro {
+        margin: 30%;
+        font-size: 1.4rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .hero {
+        height: 85vh;
+        padding: 40px 30px;
+    }
+    
+    .intro {
+        margin: 25%;
+        font-size: 1.3rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        height: 80vh;
+        padding: 30px 20px;
+    }
+    
+    .intro {
+        margin: 20%;
+        font-size: 1.2rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+    
+    .hero-description {
+        font-size: 0.95rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hero {
+        height: 75vh;
+        padding: 25px 15px;
+    }
+    
+    .intro {
+        margin: 15%;
+        font-size: 1.1rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.4rem;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero {
+        height: 70vh;
+        padding: 20px 10px;
+    }
+    
+    .intro {
+        margin: 10%;
+        font-size: 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.3rem;
+    }
+    
+    .hero-description {
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .hero {
+        height: 65vh;
+        padding: 15px 8px;
+    }
+    
+    .intro {
+        margin: 8%;
+        font-size: 0.95rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.2rem;
+    }
+    
+    .hero-description {
+        font-size: 0.8rem;
+    }
+}
+
+/* Adjust for smaller screens with less height */
+@media screen and (max-height: 700px) {
+    .hero {
+        height: 100vh;
+        padding: 20px;
+    }
+    
+    .intro {
+        margin: 10%;
+        font-size: 1.2rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+}
+
+/* Improve text readability on high-density displays */
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+    .hero h1, .hero-description {
+        font-smooth: always;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
 }

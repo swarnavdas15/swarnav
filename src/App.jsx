@@ -10,12 +10,12 @@ import './style.css'
 function App() {
   return (
     <div className="app-root">
-     {/* <TsParticlesBg /> */}
+     <TsParticlesBg />
       <div className="content">
-      <Navbar /> 
-      <Home />
-      <Showcase />
-      <Contact />
+      <Navbar />
+      <div id="home"><Home /></div>
+      <div id="Project"><Showcase /></div>
+      <div id="contact"><Contact /></div>
       <Footer />
     </div>
     </div>
