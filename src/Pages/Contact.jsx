@@ -98,7 +98,7 @@ export default function Contact({ onSubmit }) {
             <div className="top" />
             <div className="left side" />
             <div className="right side" />
-            <div className="title">Follow On!</div>
+            <div className="title">Catch Me!</div>
             <div className="button-container">
               <button className="button"><a href="https://www.instagram.com/m_roni2/">
                 <svg className="svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="green" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -127,7 +127,7 @@ export default function Contact({ onSubmit }) {
 
       {/* Right column: contact form */}
       <div className="creative" aria-label="Contact form panel">
-        <div className="title-head">Make it happen — which service?</div>
+        <div className="title-head">Don't wait - Make your idea true !</div>
         <div className="sub">Quick, creative, and low on system load. Pick one and let's start.</div>
 
         <form onSubmit={handleSubmit}>

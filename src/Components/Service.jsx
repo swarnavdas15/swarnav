@@ -13,7 +13,7 @@ const Service = () => {
   return (
     <section className="services-section">
       <div className="container">
-        <h2 className="section-title">My Services</h2>
+        <h2 className="section-title">What I do!</h2>
         <div className="services-grid">
           {services.map((service, index) => (
             <div key={index} className="service-card">

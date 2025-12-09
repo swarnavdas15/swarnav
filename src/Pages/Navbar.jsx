@@ -127,7 +127,7 @@ function Navbar() {
       {/* Side menu */}
       <div className={`side-menu ${isMenuOpen ? 'active' : ''}`}>
         <div className="side-menu-header">
-          <h2 className="side-menu-logo">MyPortfolio</h2>
+          <h2 className="side-menu-logo">Zyora</h2>
           <div className="close-btn" onClick={closeMenu}>
             <span className="close-line close-line-1"></span>
             <span className="close-line close-line-2"></span>
@@ -135,9 +135,9 @@ function Navbar() {
         </div>
         <ul className="side-menu-items">
           <li className="side-menu-item">
-            <a href='#home' className={activeLink === 'home' ? 'active' : ''} onClick={closeMenu}>
+            <a href='#home' className={activeLink === 'about' ? 'active' : ''} onClick={closeMenu}>
               <span className="menu-icon"></span>
-              <span className="menu-text">Home</span>
+              <span className="menu-text">About</span>
             </a>
           </li>
           <li className="side-menu-item">
@@ -178,7 +178,7 @@ function Navbar() {
       {/* Traditional navbar for desktop */}
       <div className='navbar'>
         <div className="nav-cont">
-          <h1 className="nav-logo">MyPortfolio</h1>
+          <h1 className="nav-logo">SS</h1>
           <div className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
             <span className={isMenuOpen ? 'bar open' : 'bar'}></span>
             <span className={isMenuOpen ? 'bar open' : 'bar'}></span>
