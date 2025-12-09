@@ -301,7 +301,7 @@
 /* Enhanced responsive typography system */
 @media screen and (max-width: 1400px) {
     .hero h1 {
-        font-size: 2.8rem;
+        font-size: 5.5rem;
     }
     
     .intro {
@@ -309,7 +309,7 @@
     }
     
     .hero-description {
-        font-size: 1rem;
+        font-size: 2.1rem;
     }
 }
 
@@ -320,7 +320,7 @@
     }
     
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 5.5rem;
     }
     
     .intro {
@@ -328,7 +328,7 @@
     }
     
     .hero-description {
-        font-size: 0.95rem;
+        font-size: 2.1rem;
     }
 }
 
@@ -339,7 +339,7 @@
     }
     
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 5.5rem;
     }
     
     .intro {
@@ -347,7 +347,7 @@
     }
     
     .hero-description {
-        font-size: 0.9rem;
+        font-size: 2.1rem;
     }
 }
 
@@ -358,7 +358,7 @@
     }
     
     .hero h1 {
-        font-size: 2rem;
+        font-size: 4.5rem;
     }
     
     .intro {
@@ -366,7 +366,7 @@
     }
     
     .hero-description {
-        font-size: 0.85rem;
+        font-size: 2.0rem;
     }
 }
 
@@ -378,7 +378,7 @@
     }
     
     .hero h1 {
-        font-size: 1.8rem;
+        font-size: 3.8rem;
         line-height: 1.2;
         margin-bottom: clamp(0.75rem, 2vw, 1.25rem);
     }
@@ -389,7 +389,7 @@
     }
     
     .hero-description {
-        font-size: 0.8rem;
+        font-size: 1.8rem;
         line-height: 1.6;
     }
     
@@ -406,7 +406,7 @@
     }
     
     .hero h1 {
-        font-size: 1.6rem;
+        font-size: 3.6rem;
         margin-bottom: clamp(0.6rem, 1.8vw, 1rem);
     }
     
@@ -415,7 +415,7 @@
     }
     
     .hero-description {
-        font-size: 0.75rem;
+        font-size: 1.75rem;
     }
 }
 
@@ -426,7 +426,7 @@
     }
     
     .hero h1 {
-        font-size: 1.4rem;
+        font-size: 2.4rem;
         margin-bottom: clamp(0.5rem, 1.6vw, 0.8rem);
     }
     
@@ -471,7 +471,7 @@
     }
     
     .hero h1 {
-        font-size: 1.8rem;
+        font-size: 3.8rem;
     }
     
     .intro {
@@ -479,7 +479,7 @@
     }
     
     .hero-description {
-        font-size: 0.85rem;
+        font-size: 2.85rem;
     }
 }
 
