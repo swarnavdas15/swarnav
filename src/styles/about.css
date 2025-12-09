@@ -1,3 +1,114 @@
+/* Scroll-based animation system for all sections */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes staggerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Utility classes for scroll animations */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, opacity;
+}
+
+.scroll-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-animate.fade-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.scroll-animate.fade-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.scroll-animate.fade-right {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.scroll-animate.fade-scale {
+  animation: fadeInScale 0.8s ease-out forwards;
+}
+
+/* Staggered animations for multiple elements */
+.scroll-animate.stagger-1 {
+  animation: staggerFadeIn 0.8s ease-out 0.1s forwards;
+  animation-delay: 0.1s;
+}
+
+.scroll-animate.stagger-2 {
+  animation: staggerFadeIn 0.8s ease-out 0.1s forwards;
+  animation-delay: 0.2s;
+}
+
+.scroll-animate.stagger-3 {
+  animation: staggerFadeIn 0.8s ease-out 0.1s forwards;
+  animation-delay: 0.3s;
+}
+
+.scroll-animate.stagger-4 {
+  animation: staggerFadeIn 0.8s ease-out 0.1s forwards;
+  animation-delay: 0.4s;
+}
+
+.scroll-animate.stagger-5 {
+  animation: staggerFadeIn 0.8s ease-out 0.1s forwards;
+  animation-delay: 0.5s;
+}
+
 /* Enhanced CSS variables for About component responsive design */
 :root {
   --glass-bg: rgba(255, 255, 255, 0.12);
@@ -217,26 +328,32 @@
 
 /* Adaptive typography system */
 .text-content h2 {
-  font-size: clamp(2rem, 4.5vw, 3rem);
-  margin: 0;
-  background: linear-gradient(135deg, var(--text-primary), var(--accent-primary));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  line-height: 1.1;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+    font-size: 2.5rem;
+    margin: 0;
+    background: linear-gradient(135deg, var(--text-primary), var(--accent-primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    animation: fadeInLeft 1s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-40px);
 }
 
 .bio {
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
-  line-height: 1.7;
-  color: var(--text-secondary);
-  margin: 0;
-  opacity: 0.95;
-  hyphens: auto;
-  word-break: break-word;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0;
+    opacity: 0.95;
+    hyphens: auto;
+    word-break: break-word;
+    animation: fadeInRight 1s ease-out 0.2s forwards;
+    opacity: 0;
+    transform: translateX(40px);
 }
 
 /* Metadata with responsive layout */
@@ -254,7 +371,7 @@
   padding: clamp(0.5rem, 1.2vw, 0.75rem) clamp(0.75rem, 1.8vw, 1rem);
   border-radius: var(--border-radius-md);
   border: 1px solid var(--glass-border);
-  font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+  font-size: 0.9rem;
   font-weight: 500;
   transition: var(--transition-fast);
   cursor: default;
@@ -285,7 +402,7 @@
   font-weight: 600;
   transition: var(--transition-fast);
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  font-size: clamp(0.85rem, 1.8vw, 1rem);
+  font-size: 0.9rem;
   min-width: clamp(100px, 22vw, 140px);
   text-align: center;
 }
@@ -315,7 +432,7 @@
   padding: clamp(0.6rem, 1.5vw, 0.875rem) clamp(1rem, 2.5vw, 1.75rem);
   border-radius: 9999px;
   cursor: pointer;
-  font-size: clamp(0.85rem, 1.8vw, 1rem);
+  font-size: 0.9rem;
   font-weight: 600;
   transition: var(--transition-fast);
   box-shadow: var(--glass-shadow);
@@ -356,23 +473,44 @@
 
 /* Performance optimizations for mobile */
 @media (max-width: 768px) {
-  .about-cont {
-    will-change: transform;
-  }
-  
-  .profile-img,
-  .text-content {
+    .about-cont {
+        will-change: transform;
+    }
+    
+    .profile-img,
+    .text-content {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+    
+    .links a:hover {
+        transform: none; /* Disable hover effects for better mobile performance */
+    }
+    
+    .controls button:hover {
+        transform: none;
+    }
+}
+
+/* Performance optimizations for scroll animations */
+.scroll-animate {
+    will-change: transform, opacity;
     transform: translateZ(0);
     backface-visibility: hidden;
-  }
-  
-  .links a:hover {
-    transform: none; /* Disable hover effects for better mobile performance */
-  }
-  
-  .controls button:hover {
-    transform: none;
-  }
+}
+
+/* Reduced motion support for all sections */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-animate,
+    .text-content h2,
+    .bio,
+    .metadata,
+    .links {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
 }
 
 /* Print styles */
@@ -423,7 +561,7 @@
   }
   
   .text-content h2 {
-    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-size: 2.2rem;
   }
 }
 
@@ -438,7 +576,7 @@
   }
   
   .text-content h2 {
-    font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+    font-size: 2rem;
   }
 }
 
@@ -457,7 +595,7 @@
   }
   
   .text-content h2 {
-    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-size: 1.8rem;
   }
   
   .bio {
@@ -492,7 +630,7 @@
   }
   
   .text-content h2 {
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-size: 1.8rem;
   }
   
   .bio {
@@ -549,7 +687,7 @@
   }
   
   .text-content h2 {
-    font-size: clamp(1.4rem, 5vw, 1.8rem);
+    font-size: 1.6rem;
   }
   
   .bio {
@@ -577,7 +715,7 @@
   }
   
   .text-content h2 {
-    font-size: clamp(1.3rem, 5.5vw, 1.6rem);
+    font-size: 1.4rem;
   }
   
   .bio {
@@ -632,7 +770,7 @@
   }
   
   .text-content h2 {
-    font-size: clamp(1.2rem, 6vw, 1.5rem);
+    font-size: 1.3rem;
   }
   
   .bio {

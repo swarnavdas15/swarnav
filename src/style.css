@@ -3,10 +3,10 @@
 
 
 :root {
-  font-family: "Francois One";
+  font-family: "Francois One", sans-serif, "Cormorant Garamond", serif;
   line-height: 1.5;
   font-weight: 400;
-
+  scrollbar-width: none;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
 

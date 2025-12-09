@@ -11,7 +11,7 @@ function Hero() {
        <div className="arrow-container">
           <div className="arrow">
             <span className="arrow-line">
-              <a href="#skills" aria-label="Scroll to Skills section">↓</a>
+              <a href="#about" aria-label="Scroll to Skills section">↓</a>
             </span>
           </div>
         </div>

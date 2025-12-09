@@ -1,3 +1,114 @@
+/* Scroll-based animation system */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes staggerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Utility classes for scroll animations */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, opacity;
+}
+
+.scroll-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-animate.fade-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.scroll-animate.fade-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.scroll-animate.fade-right {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.scroll-animate.fade-scale {
+  animation: fadeInScale 0.8s ease-out forwards;
+}
+
+/* Staggered animations for multiple elements */
+.scroll-animate.stagger-1 {
+  animation: staggerFadeIn 0.8s ease-out 0.1s forwards;
+  animation-delay: 0.1s;
+}
+
+.scroll-animate.stagger-2 {
+  animation: staggerFadeIn 0.8s ease-out 0.1s forwards;
+  animation-delay: 0.2s;
+}
+
+.scroll-animate.stagger-3 {
+  animation: staggerFadeIn 0.8s ease-out 0.1s forwards;
+  animation-delay: 0.3s;
+}
+
+.scroll-animate.stagger-4 {
+  animation: staggerFadeIn 0.8s ease-out 0.1s forwards;
+  animation-delay: 0.4s;
+}
+
+.scroll-animate.stagger-5 {
+  animation: staggerFadeIn 0.8s ease-out 0.1s forwards;
+  animation-delay: 0.5s;
+}
+
 /* Hero section with comprehensive responsive design system */
 .hero {
     background: none;
@@ -59,10 +170,10 @@
 /* Bouncing animation */
 @keyframes bounce {
     0%, 100% {
-        transform: translateY(-20px) scale(1);
+        transform: translateY(-60px) scale(1);
     }
     50% {
-        transform: translateY(0px) scale(1);
+        transform: translateY(-20px) scale(1);
     }
 }
 
@@ -140,19 +251,22 @@
 .intro {
     max-width: 900px;
     width: 100%;
-    margin: 8% auto;
+    margin: 9% auto;
     color: var(--text-secondary);
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
-    line-height: 1.6;
+    font-size: 1.2rem;
+    line-height: 1rem;
     position: relative;
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(40px);
 }
 
 /* Main heading with adaptive typography */
 .hero h1 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: 5.5rem;
     color: var(--text-primary);
-    margin: 0 0 clamp(1rem, 2.5vw, 2rem) 0;
-    line-height: 1.1;
+    margin: 0 0 2rem 0;
+    line-height: 1.0;
     font-weight: 700;
     letter-spacing: -0.02em;
     text-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -161,7 +275,9 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 200% 200%;
-    animation: gradientShift 8s ease-in-out infinite;
+    animation: gradientShift 8s ease-in-out infinite, fadeInUp 1s ease-out 0.2s forwards;
+    opacity: 0;
+    transform: translateY(40px);
 }
 
 @keyframes gradientShift {
@@ -171,26 +287,29 @@
 
 /* Description text */
 .hero-description {
-    margin-top: clamp(0.75rem, 2vw, 1.5rem);
-    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    margin-top: 0.75rem;
+    font-size: 2.1rem;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: 1.1;
     font-weight: 400;
     opacity: 0.95;
+    animation: fadeInUp 1s ease-out 0.3s forwards;
+    opacity: 0;
+    transform: translateY(40px);
 }
 
 /* Enhanced responsive typography system */
 @media screen and (max-width: 1400px) {
     .hero h1 {
-        font-size: clamp(2.2rem, 5.5vw, 3.5rem);
+        font-size: 2.8rem;
     }
     
     .intro {
-        font-size: clamp(0.95rem, 2.3vw, 1.4rem);
+        font-size: 1.1rem;
     }
     
     .hero-description {
-        font-size: clamp(0.9rem, 2vw, 1.1rem);
+        font-size: 1rem;
     }
 }
 
@@ -201,15 +320,15 @@
     }
     
     .hero h1 {
-        font-size: clamp(2rem, 5vw, 3rem);
+        font-size: 2.5rem;
     }
     
     .intro {
-        font-size: clamp(0.9rem, 2.2vw, 1.3rem);
+        font-size: 1.1rem;
     }
     
     .hero-description {
-        font-size: clamp(0.85rem, 1.9vw, 1rem);
+        font-size: 0.95rem;
     }
 }
 
@@ -220,15 +339,15 @@
     }
     
     .hero h1 {
-        font-size: clamp(1.8rem, 4.5vw, 2.7rem);
+        font-size: 2.2rem;
     }
     
     .intro {
-        font-size: clamp(0.85rem, 2.1vw, 1.2rem);
+        font-size: 1rem;
     }
     
     .hero-description {
-        font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+        font-size: 0.9rem;
     }
 }
 
@@ -239,15 +358,15 @@
     }
     
     .hero h1 {
-        font-size: clamp(1.6rem, 4vw, 2.4rem);
+        font-size: 2rem;
     }
     
     .intro {
-        font-size: clamp(0.8rem, 2vw, 1.1rem);
+        font-size: 1rem;
     }
     
     .hero-description {
-        font-size: clamp(0.75rem, 1.7vw, 0.9rem);
+        font-size: 0.85rem;
     }
 }
 
@@ -259,18 +378,18 @@
     }
     
     .hero h1 {
-        font-size: clamp(1.4rem, 4.5vw, 2.1rem);
+        font-size: 1.8rem;
         line-height: 1.2;
         margin-bottom: clamp(0.75rem, 2vw, 1.25rem);
     }
     
     .intro {
-        font-size: clamp(0.75rem, 2.2vw, 1rem);
+        font-size: 0.95rem;
         line-height: 1.6;
     }
     
     .hero-description {
-        font-size: clamp(0.7rem, 1.8vw, 0.85rem);
+        font-size: 0.8rem;
         line-height: 1.6;
     }
     
@@ -287,16 +406,16 @@
     }
     
     .hero h1 {
-        font-size: clamp(1.3rem, 5vw, 1.9rem);
+        font-size: 1.6rem;
         margin-bottom: clamp(0.6rem, 1.8vw, 1rem);
     }
     
     .intro {
-        font-size: clamp(0.7rem, 2vw, 0.95rem);
+        font-size: 0.9rem;
     }
     
     .hero-description {
-        font-size: clamp(0.65rem, 1.7vw, 0.8rem);
+        font-size: 0.75rem;
     }
 }
 
@@ -307,17 +426,17 @@
     }
     
     .hero h1 {
-        font-size: clamp(1.2rem, 5.5vw, 1.7rem);
+        font-size: 1.4rem;
         margin-bottom: clamp(0.5rem, 1.6vw, 0.8rem);
     }
     
     .intro {
-        font-size: clamp(0.65rem, 1.9vw, 0.9rem);
+        font-size: 0.85rem;
         line-height: 1.5;
     }
     
     .hero-description {
-        font-size: clamp(0.6rem, 1.6vw, 0.75rem);
+        font-size: 0.7rem;
         line-height: 1.5;
     }
 }
@@ -329,17 +448,17 @@
     }
     
     .hero h1 {
-        font-size: clamp(1.1rem, 6vw, 1.5rem);
+        font-size: 1.3rem;
         margin-bottom: clamp(0.4rem, 1.4vw, 0.7rem);
     }
     
     .intro {
-        font-size: clamp(0.6rem, 1.8vw, 0.85rem);
+        font-size: 0.8rem;
         line-height: 1.5;
     }
     
     .hero-description {
-        font-size: clamp(0.55rem, 1.5vw, 0.7rem);
+        font-size: 0.65rem;
     }
 }
 
@@ -352,15 +471,15 @@
     }
     
     .hero h1 {
-        font-size: clamp(1.5rem, 4.5vw, 2.2rem);
+        font-size: 1.8rem;
     }
     
     .intro {
-        font-size: clamp(0.8rem, 2vw, 1rem);
+        font-size: 0.95rem;
     }
     
     .hero-description {
-        font-size: clamp(0.75rem, 1.8vw, 0.9rem);
+        font-size: 0.85rem;
     }
 }
 
@@ -371,6 +490,27 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
+}
+
+/* Performance optimizations for scroll animations */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-animate,
+    .hero h1,
+    .hero-description,
+    .intro h1,
+    .intro .hero-description {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* Better performance for scroll animations */
+.scroll-animate {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 /* Better performance on mobile devices */

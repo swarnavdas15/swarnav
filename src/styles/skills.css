@@ -1,3 +1,114 @@
+/* Scroll-based animation system for all sections */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes staggerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Utility classes for scroll animations */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, opacity;
+}
+
+.scroll-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-animate.fade-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.scroll-animate.fade-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.scroll-animate.fade-right {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.scroll-animate.fade-scale {
+  animation: fadeInScale 0.8s ease-out forwards;
+}
+
+/* Staggered animations for multiple elements */
+.scroll-animate.stagger-1 {
+  animation: staggerFadeIn 0.8s ease-out 0.1s forwards;
+  animation-delay: 0.1s;
+}
+
+.scroll-animate.stagger-2 {
+  animation: staggerFadeIn 0.8s ease-out 0.1s forwards;
+  animation-delay: 0.2s;
+}
+
+.scroll-animate.stagger-3 {
+  animation: staggerFadeIn 0.8s ease-out 0.1s forwards;
+  animation-delay: 0.3s;
+}
+
+.scroll-animate.stagger-4 {
+  animation: staggerFadeIn 0.8s ease-out 0.1s forwards;
+  animation-delay: 0.4s;
+}
+
+.scroll-animate.stagger-5 {
+  animation: staggerFadeIn 0.8s ease-out 0.1s forwards;
+  animation-delay: 0.5s;
+}
+
 /* Enhanced Skills section with comprehensive responsive design system */
 :root {
   --skills-bg: transparent;
@@ -90,7 +201,7 @@
 }
 
 h2 {
-  font-size: clamp(1.6rem, 4.2vw, 2.2rem);
+  font-size: 1.9rem;
   font-weight: 700;
   color: var(--text-primary);
   margin: 0 0 clamp(1rem, 2.5vw, 1.5rem) 0;
@@ -119,7 +230,7 @@ h2::after {
 /* Skills grid with responsive auto-fit */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(clamp(180px, 28vw, 260px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: clamp(1rem, 2.5vw, 1.75rem);
   align-items: start;
 }
@@ -174,13 +285,13 @@ h2::after {
 
 /* Skill node with comprehensive responsive design */
 .skill-node {
-  padding: clamp(1rem, 2.5vw, 1.5rem) clamp(1.25rem, 3vw, 1.75rem);
+  padding: 1.25rem 1.5rem;
   border-radius: 9999px;
   backdrop-filter: blur(12px);
   border: 1px solid var(--card-border);
   color: var(--text-primary);
   font-weight: 600;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: 1rem;
   transition: var(--transition-fast);
   position: relative;
   overflow: hidden;
@@ -190,7 +301,7 @@ h2::after {
   gap: clamp(0.5rem, 1.2vw, 0.75rem);
   box-shadow: var(--shadow-soft);
   background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-  min-height: clamp(80px, 20vw, 120px);
+  min-height: 100px;
   align-items: flex-start;
   justify-content: center;
   text-align: left;
@@ -234,26 +345,32 @@ h2::after {
 }
 
 .skill-name {
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+    animation: fadeInLeft 0.8s ease-out 0.1s forwards;
+    opacity: 0;
+    transform: translateX(-30px);
 }
 
 .skill-desc {
-  font-size: clamp(0.75rem, 1.7vw, 0.9rem);
-  opacity: 0.8;
-  color: var(--text-secondary);
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.4;
+    font-size: 0.8rem;
+    opacity: 0.8;
+    color: var(--text-secondary);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.4;
+    animation: fadeInRight 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+    transform: translateX(30px);
 }
 
 .skill-prefix {
   color: var(--accent-tertiary);
   font-weight: 800;
   opacity: 0.95;
-  font-size: clamp(1rem, 2.3vw, 1.3rem);
+  font-size: 1.15rem;
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
   background: linear-gradient(135deg, var(--accent-tertiary), #39f56d);
   -webkit-background-clip: text;
@@ -296,7 +413,7 @@ h2::after {
   }
   
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(clamp(160px, 26vw, 240px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: clamp(0.875rem, 2.2vw, 1.5rem);
   }
   
@@ -308,7 +425,7 @@ h2::after {
 
 @media (max-width: 1200px) {
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 24vw, 220px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
     gap: clamp(0.75rem, 2vw, 1.25rem);
   }
   
@@ -324,7 +441,7 @@ h2::after {
   }
   
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(clamp(140px, 22vw, 200px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     gap: clamp(0.7rem, 1.8vw, 1rem);
   }
   
@@ -344,7 +461,7 @@ h2::after {
   }
   
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(clamp(130px, 20vw, 180px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
     gap: clamp(0.6rem, 1.6vw, 0.875rem);
   }
   
@@ -384,26 +501,26 @@ h2::after {
   }
   
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(clamp(120px, 30vw, 160px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: clamp(0.5rem, 1.4vw, 0.75rem);
   }
   
   .category h2 {
-    font-size: clamp(1.4rem, 4vw, 1.8rem);
+    font-size: 1.6rem;
   }
   
   .skill-node {
-    min-height: clamp(70px, 18vw, 100px);
-    padding: clamp(0.875rem, 2vw, 1.25rem) clamp(1rem, 2.5vw, 1.5rem);
-    font-size: clamp(0.85rem, 1.8vw, 1rem);
+    min-height: 85px;
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
   }
   
   .skill-name {
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-size: 1rem;
   }
   
   .skill-desc {
-    font-size: clamp(0.7rem, 1.6vw, 0.85rem);
+    font-size: 0.8rem;
   }
   
   /* Disable hover effects for better mobile performance */
@@ -423,22 +540,22 @@ h2::after {
   }
   
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(clamp(110px, 32vw, 140px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
     gap: clamp(0.45rem, 1.2vw, 0.625rem);
   }
   
   .skill-node {
-    min-height: clamp(65px, 16vw, 90px);
-    padding: clamp(0.75rem, 1.8vw, 1rem) clamp(0.875rem, 2.2vw, 1.25rem);
-    font-size: clamp(0.8rem, 1.7vw, 0.95rem);
+    min-height: 77px;
+    padding: 0.875rem 1rem;
+    font-size: 0.875rem;
   }
   
   .skill-name {
-    font-size: clamp(0.85rem, 1.9vw, 1rem);
+    font-size: 0.95rem;
   }
   
   .skill-desc {
-    font-size: clamp(0.65rem, 1.5vw, 0.8rem);
+    font-size: 0.75rem;
   }
   
   .separator {
@@ -452,26 +569,26 @@ h2::after {
   }
   
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(clamp(100px, 34vw, 120px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
     gap: clamp(0.4rem, 1vw, 0.5rem);
   }
   
   .skill-node {
-    min-height: clamp(60px, 14vw, 80px);
-    padding: clamp(0.625rem, 1.6vw, 0.875rem) clamp(0.75rem, 2vw, 1rem);
-    font-size: clamp(0.75rem, 1.6vw, 0.9rem);
+    min-height: 70px;
+    padding: 0.75rem 0.875rem;
+    font-size: 0.825rem;
   }
   
   .skill-name {
-    font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+    font-size: 0.9rem;
   }
   
   .skill-desc {
-    font-size: clamp(0.6rem, 1.4vw, 0.75rem);
+    font-size: 0.7rem;
   }
   
   .skill-prefix {
-    font-size: clamp(0.875rem, 2vw, 1.1rem);
+    font-size: 1rem;
   }
   
   .separator {
@@ -491,22 +608,22 @@ h2::after {
   }
   
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(clamp(90px, 36vw, 100px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
     gap: clamp(0.35rem, 0.9vw, 0.45rem);
   }
   
   .skill-node {
-    min-height: clamp(55px, 12vw, 70px);
-    padding: clamp(0.5rem, 1.4vw, 0.75rem) clamp(0.625rem, 1.8vw, 0.875rem);
-    font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+    min-height: 62px;
+    padding: 0.625rem 0.75rem;
+    font-size: 0.8rem;
   }
   
   .skill-name {
-    font-size: clamp(0.75rem, 1.7vw, 0.9rem);
+    font-size: 0.85rem;
   }
   
   .skill-desc {
-    font-size: clamp(0.55rem, 1.3vw, 0.7rem);
+    font-size: 0.65rem;
   }
   
   .separator {
@@ -531,14 +648,35 @@ h2::after {
 
 /* Performance optimizations for mobile */
 @media (max-width: 768px) {
-  .skills {
-    will-change: transform;
-  }
-  
-  .skill-node {
+    .skills {
+        will-change: transform;
+    }
+    
+    .skill-node {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+}
+
+/* Performance optimizations for scroll animations */
+.scroll-animate {
+    will-change: transform, opacity;
     transform: translateZ(0);
     backface-visibility: hidden;
-  }
+}
+
+/* Reduced motion support for all sections */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-animate,
+    h2,
+    .skill-node,
+    .skill-name,
+    .skill-desc {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
 }
 
 /* Accessibility improvements */
