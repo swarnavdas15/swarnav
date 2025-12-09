@@ -275,7 +275,7 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 200% 200%;
-    animation: gradientShift 8s ease-in-out infinite, fadeInUp 1s ease-out 0.2s forwards;
+    animation: gradientShift 8s ease-in-out infinite, fadeInUp 2s ease-out 2.2s forwards;
     opacity: 0;
     transform: translateY(40px);
 }

@@ -136,25 +136,25 @@ function Navbar() {
         <ul className="side-menu-items">
           <li className="side-menu-item">
             <a href='#home' className={activeLink === 'home' ? 'active' : ''} onClick={closeMenu}>
-              <span className="menu-icon">🏠</span>
+              <span className="menu-icon"></span>
               <span className="menu-text">Home</span>
             </a>
           </li>
           <li className="side-menu-item">
             <a href="#skills" className={activeLink === 'skills' ? 'active' : ''} onClick={closeMenu}>
-              <span className="menu-icon">👤</span>
-              <span className="menu-text">About</span>
+              <span className="menu-icon"></span>
+              <span className="menu-text">Skills</span>
             </a>
           </li>
           <li className="side-menu-item">
             <a href="#Project" className={activeLink === 'Project' ? 'active' : ''} onClick={closeMenu}>
-              <span className="menu-icon">💼</span>
+              <span className="menu-icon"></span>
               <span className="menu-text">Showcase</span>
             </a>
           </li>
           <li className="side-menu-item">
             <a href="#contact" className={activeLink === 'contact' ? 'active' : ''} onClick={closeMenu}>
-              <span className="menu-icon">📧</span>
+              <span className="menu-icon"></span>
               <span className="menu-text">Contact</span>
             </a>
           </li>
@@ -162,9 +162,15 @@ function Navbar() {
         <div className="side-menu-footer">
           <p>Connect with me</p>
           <div className="social-links">
-            <a href="#" className="social-link">LinkedIn</a>
-            <a href="#" className="social-link">GitHub</a>
-            <a href="#" className="social-link">Twitter</a>
+            <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" className="social-link">
+              <img src="/icons/linkedin.svg" alt="LinkedIn" className="social-icon" />
+            </a>
+            <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" className="social-link">
+              <img src="/icons/github.svg" alt="GitHub" className="social-icon" />
+            </a>
+            <a href="https://instagram.com/your-username" target="_blank" rel="noopener noreferrer" className="social-link">
+              <img src="/icons/instagram.svg" alt="Instagram" className="social-icon" />
+            </a>
           </div>
         </div>
       </div>

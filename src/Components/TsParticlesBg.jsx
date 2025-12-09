@@ -111,7 +111,7 @@ const TsParticlesBg = () => {
       fpsLimit: 60,
       particles: {
         number: {
-          value: isMobile ? 30 : 60, // Reduce particle count on mobile
+          value: isMobile ? 50 : 60, // Reduce particle count on mobile
           density: {
             enable: true,
             area: isMobile ? 1200 : 800 // Increase area on mobile for better performance
@@ -124,12 +124,12 @@ const TsParticlesBg = () => {
           random: false
         },
         size: {
-          value: { min: isMobile ? 1 : 1, max: isMobile ? 4 : 6 },
+          value: { min: isMobile ? 1 : 1, max: isMobile ? 5 : 6 },
           random: true
         },
         links: {
           enable: true,
-          distance: isMobile ? 150 : 200, // Reduce link distance on mobile
+          distance: isMobile ? 190 : 200, // Reduce link distance on mobile
           color: '#d30303ff',
           opacity: isMobile ? 0.7 : 0.9, // Reduce link opacity on mobile
           width: isMobile ? 1 : 2
@@ -156,7 +156,7 @@ const TsParticlesBg = () => {
         },
         modes: {
           grab: {
-            distance: isMobile ? 150 : 200,
+            distance: isMobile ? 180 : 200,
             links: { opacity: isMobile ? 0.8 : 1 }
           },
           push: {
