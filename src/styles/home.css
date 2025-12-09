@@ -1,0 +1,190 @@
+/* Root CSS variables for responsive design system */
+:root {
+  --container-max-width: 1400px;
+  --container-padding: clamp(1rem, 3vw, 4rem);
+  --section-spacing: clamp(2rem, 6vw, 8rem);
+  --card-spacing: clamp(1rem, 2.5vw, 3rem);
+  --border-radius: clamp(16px, 3vw, 24px);
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-blur: blur(12px);
+  --text-primary: #f1e9e9;
+  --text-secondary: #d4d2d2;
+  --accent-primary: #bb7723;
+  --accent-secondary: #2196f3;
+  --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-hard: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Dark theme variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --text-primary: #f1e9e9;
+    --text-secondary: #d4d2d2;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --glass-border: rgba(255, 255, 255, 0.35);
+    --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Home section - Flexible grid layout system */
+.home {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: var(--section-spacing);
+  background-color: transparent;
+  overflow-x: hidden;
+  z-index: 10;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Container for better layout control */
+.home::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top, rgba(255,255,255,0.05), transparent 60%),
+              radial-gradient(ellipse at bottom, rgba(255,255,255,0.03), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Responsive grid improvements */
+@media (min-width: 769px) {
+  .home {
+    grid-template-columns: 1fr;
+    gap: calc(var(--section-spacing) * 1.2);
+  }
+}
+
+@media (min-width: 1200px) {
+  .home {
+    grid-template-columns: 1fr;
+    gap: calc(var(--section-spacing) * 1.5);
+  }
+}
+
+/* Component spacing optimization */
+.home > * {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--container-max-width);
+  width: 100%;
+  padding: 0 var(--container-padding);
+  box-sizing: border-box;
+}
+
+/* Improved responsive margins and padding */
+@media (max-width: 1400px) {
+  .home > * {
+    --container-padding: clamp(1rem, 3vw, 3rem);
+  }
+}
+
+@media (max-width: 1024px) {
+  .home > * {
+    --container-padding: clamp(1rem, 2.5vw, 2.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .home > * {
+    --container-padding: clamp(0.75rem, 2vw, 2rem);
+    --section-spacing: clamp(1.5rem, 4vw, 3rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .home > * {
+    --container-padding: clamp(0.6rem, 1.8vw, 1.5rem);
+    --section-spacing: clamp(1.25rem, 3.5vw, 2.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .home > * {
+    --container-padding: clamp(0.5rem, 1.5vw, 1.25rem);
+    --section-spacing: clamp(1rem, 3vw, 2rem);
+  }
+}
+
+@media (max-width: 360px) {
+  .home > * {
+    --container-padding: clamp(0.4rem, 1.2vw, 1rem);
+    --section-spacing: clamp(0.8rem, 2.5vw, 1.5rem);
+  }
+}
+
+/* Adjust for landscape orientation on mobile */
+@media screen and (max-height: 500px) and (max-width: 768px) {
+  .home {
+    gap: var(--section-spacing);
+  }
+  
+  .home > * {
+    --container-padding: clamp(0.5rem, 2vw, 1.5rem);
+    --section-spacing: clamp(1rem, 3vw, 2rem);
+  }
+}
+
+/* Better spacing for tablets in portrait */
+@media (max-width: 1024px) and (max-height: 768px) {
+  .home > * {
+    --container-padding: clamp(0.75rem, 2.2vw, 2rem);
+    --section-spacing: clamp(1.5rem, 4vw, 3rem);
+  }
+}
+
+/* Performance optimizations for mobile */
+@media (max-width: 768px) {
+  .home {
+    will-change: transform;
+  }
+  
+  .home > * {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: no-preference) {
+  .home {
+    transition: all 0.3s ease;
+  }
+}
+
+/* Print styles */
+@media print {
+  .home {
+    background: white;
+    color: black;
+  }
+  
+  .home > * {
+    break-inside: avoid;
+    background: transparent;
+  }
+}

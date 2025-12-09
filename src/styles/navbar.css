@@ -1,0 +1,760 @@
+/* Overlay for mobile menu */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 150;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Side menu for mobile */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -80%;
+  width: 80%;
+  max-width: 350px;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(20, 20, 20, 0.98), rgba(30, 30, 30, 0.95));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+  transform: translateX(100%);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 160;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu.active {
+  transform: translateX(0);
+  right: 0;
+}
+
+.side-menu-header {
+  padding: 25px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(33, 150, 243, 0.1), rgba(244, 67, 54, 0.1));
+}
+
+.side-menu-logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #bb7723;
+  margin: 0;
+}
+
+.close-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.close-line {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: #f1e9e9;
+  transition: all 0.3s ease;
+}
+
+.close-line-1 {
+  transform: rotate(45deg);
+}
+
+.close-line-2 {
+  transform: rotate(-45deg);
+}
+
+.side-menu-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.side-menu-item {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.side-menu-item a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 20px;
+  color: #f1e9e9;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.side-menu-item a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-left-color: #bb7723;
+  transform: translateX(5px);
+}
+
+.side-menu-item a.active {
+  background: linear-gradient(90deg, rgba(33, 150, 243, 0.2), rgba(244, 67, 54, 0.2));
+  color: #fff;
+  font-weight: 600;
+  border-left-color: #bb7723;
+}
+
+.menu-icon {
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+}
+
+.menu-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.side-menu-footer {
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(90deg, rgba(33, 150, 243, 0.05), rgba(244, 67, 54, 0.05));
+}
+
+.side-menu-footer p {
+  margin: 0 0 15px 0;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #f1e9e9;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Traditional navbar for desktop */
+.navbar{
+    background: rgba(140, 125, 125, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(194, 15, 15, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid #e689174d;
+    overflow: hidden;
+    width: 70%;
+    margin: 3%;
+    margin-left: 14%;
+    height: 12vh;
+    position: fixed;
+    z-index: 200;
+}
+
+.nav-cont{
+    display: flex;
+    gap: 25%;
+    align-items: center;
+    padding: 0.5%;
+    height: inherit;
+}
+
+.nav-logo{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #bb7723;
+    margin-left: 2%;
+}
+
+.nav-cont ul{
+    margin: 0;
+    padding: 0%;
+    display: flex;
+    gap: 25%;
+    align-items: center;
+}
+
+ul li{
+    list-style-type: none;
+    float: left;
+    font-size: 1.2rem;
+}
+
+li a {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 300;
+  color: #f1e9e9;
+  transition: color .2s ease;
+  padding: 3px 0;
+  margin-bottom: 15px;
+  text-decoration: none;
+  
+  /* Ensure consistent positioning for pseudo-elements */
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: width .3s ease, background-color .3s ease;
+  }
+  
+  &::before {
+    background: linear-gradient(90deg, #2196f3, #9c27b0);
+    transition-delay: .05s;
+  }
+  
+  &::after {
+    background: linear-gradient(90deg, #F44336, #ff9800);
+    transition-delay: .1s;
+    top: calc(100% + 9px);
+  }
+  
+  &:hover {
+    color: #aaa;
+    
+    &::before {
+      width: 100%;
+    }
+    
+    &::after {
+      width: 100%;
+    }
+  }
+  
+  /* Active state with enhanced animation */
+  &.active {
+    color: #fff;
+    font-weight: 600;
+    
+    &::before {
+      width: 100%;
+      background: linear-gradient(90deg, #2196f3, #9c27b0);
+    }
+    
+    &::after {
+      width: 100%;
+      background: linear-gradient(90deg, #F44336, #ff9800);
+    }
+  }
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+  gap: 6px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #f1e9e9;
+  transition: all 0.3s ease;
+  transform-origin: center;
+  border-radius: 2px;
+}
+
+/* Hamburger animation */
+.hamburger .bar.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger .bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger .bar.open:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile menu */
+.nav-items {
+  transition: max-height 0.3s ease-in-out;
+  overflow: hidden;
+  max-height: 500px;
+}
+
+/* Hide traditional navbar items on mobile - we use side menu instead */
+@media screen and (max-width: 768px) {
+  .nav-items {
+    display: none;
+  }
+}
+
+/* Active link styles are now handled in the main li a block */
+
+/* Enhanced animation performance and consistency */
+li a {
+  will-change: color, transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure consistent pseudo-element rendering */
+li a::before,
+li a::after {
+  will-change: width;
+  transform: translateZ(0);
+  content: '';
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: width .3s ease, background-color .3s ease;
+}
+
+/* Fallback for older browsers */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  li a::before,
+  li a::after {
+    transition: width .3s ease;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  li a {
+    transition: none !important;
+  }
+  
+  li a::before,
+  li a::after {
+    transition: none !important;
+  }
+}
+
+/* Improve mobile menu visibility for traditional navbar (fallback) */
+@media screen and (max-width: 768px) {
+  .nav-cont ul {
+    background: rgba(20, 20, 20, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .nav-item a.active {
+    background: linear-gradient(90deg, rgba(33, 150, 243, 0.2), rgba(244, 67, 54, 0.2));
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Media Queries */
+@media screen and (min-width: 769px) {
+  .nav-items {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    width: 85%;
+    margin-left: 7.5%;
+  }
+  
+  .nav-cont ul {
+    gap: 20%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    width: 95%;
+    margin-left: 2.5%;
+    height: 14vh;
+  }
+  
+  .nav-logo {
+    font-size: 1.5rem;
+  }
+  
+  .nav-cont ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: none;
+    flex-direction: column;
+    gap: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    z-index: 100;
+  }
+  
+  .nav-items {
+    max-height: 0;
+  }
+  
+  .nav-items.active {
+    max-height: 500px;
+    overflow: visible;
+  }
+  
+  .nav-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .nav-item:last-child {
+    border-bottom: none;
+  }
+  
+  .nav-item a {
+    display: block;
+    padding: 15px;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    height: 16vh;
+  }
+  
+  .nav-logo {
+    font-size: 1.3rem;
+  }
+  
+  .nav-item a {
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
+
+/* Additional responsive improvements for better theme consistency */
+@media screen and (max-width: 1200px) {
+  .navbar {
+    width: 90%;
+    margin-left: 5%;
+  }
+  
+  .nav-cont ul {
+    gap: 18%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .navbar {
+    width: 92%;
+    margin-left: 4%;
+  }
+  
+  .nav-logo {
+    font-size: 1.6rem;
+  }
+  
+  .nav-cont ul {
+    gap: 15%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    width: 96%;
+    margin-left: 2%;
+    height: 15vh;
+  }
+  
+  .nav-logo {
+    font-size: 1.4rem;
+  }
+  
+  .nav-cont {
+    gap: 50%;
+  }
+  
+  .nav-item a {
+    padding: 14px 10px;
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .navbar {
+    height: 18vh;
+  }
+  
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+  
+  .nav-item a {
+    padding: 10px 8px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Improve mobile menu animation and layout */
+@media screen and (max-width: 768px) {
+  .nav-items {
+    animation: slideDown 0.3s ease-in-out;
+  }
+  
+  .nav-items.active {
+    animation: slideDown 0.3s ease-in-out;
+  }
+  
+  @keyframes slideDown {
+    from {
+      max-height: 0;
+      opacity: 0;
+    }
+    to {
+      max-height: 500px;
+      opacity: 1;
+    }
+  }
+}
+
+/* Better responsive spacing for different screen densities */
+@media screen and (max-height: 700px) {
+  .navbar {
+    height: 10vh;
+  }
+  
+  .nav-cont ul {
+    gap: 20%;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .navbar {
+    width: 65%;
+    margin-left: 17.5%;
+  }
+  
+  .nav-logo {
+    font-size: 2rem;
+  }
+  
+  .nav-cont ul {
+    gap: 30%;
+  }
+}
+
+/* Side menu responsive styles */
+@media screen and (max-width: 768px) {
+  .side-menu {
+    width: 85%;
+    max-width: 320px;
+  }
+  
+  .side-menu-header {
+    padding: 20px 15px;
+  }
+  
+  .side-menu-logo {
+    font-size: 1.4rem;
+  }
+  
+  .side-menu-item a {
+    padding: 16px 15px;
+    font-size: 1rem;
+  }
+  
+  .menu-icon {
+    font-size: 1.1rem;
+  }
+  
+  .menu-text {
+    font-size: 1rem;
+  }
+  
+  .side-menu-footer {
+    padding: 15px;
+  }
+  
+  .side-menu-footer p {
+    font-size: 0.85rem;
+  }
+  
+  .social-link {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .side-menu {
+    width: 90%;
+    max-width: 300px;
+  }
+  
+  .side-menu-header {
+    padding: 18px 12px;
+  }
+  
+  .side-menu-logo {
+    font-size: 1.3rem;
+  }
+  
+  .close-btn {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .close-line {
+    width: 18px;
+  }
+  
+  .side-menu-item a {
+    padding: 14px 12px;
+    font-size: 0.95rem;
+  }
+  
+  .menu-text {
+    font-size: 0.95rem;
+  }
+  
+  .side-menu-footer {
+    padding: 12px;
+  }
+  
+  .social-link {
+    font-size: 0.7rem;
+    padding: 5px 8px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .side-menu {
+    width: 95%;
+    max-width: 280px;
+  }
+  
+  .side-menu-item a {
+    padding: 12px 10px;
+    font-size: 0.9rem;
+  }
+  
+  .menu-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablet landscape - adjust side menu width */
+@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  .side-menu {
+    width: 70%;
+    max-width: 380px;
+  }
+}
+
+/* Improve side menu animations */
+@media screen and (max-width: 768px) {
+  .side-menu {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .side-menu.active {
+    animation: slideIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .overlay {
+    transition: all 0.3s ease;
+  }
+  
+  .overlay.active {
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* Ensure proper z-index stacking */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    z-index: 170;
+  }
+  
+  .side-menu {
+    z-index: 160;
+  }
+  
+  .overlay {
+    z-index: 150;
+  }
+  
+  .navbar {
+    z-index: 140;
+  }
+}

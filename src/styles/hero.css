@@ -1,0 +1,429 @@
+/* Hero section with comprehensive responsive design system */
+.hero {
+    background: none;
+    padding: var(--container-padding);
+    text-align: center;
+    min-height: 80vh;
+    max-height: 100vh;
+    display: flex;
+    gap: 50px;
+    margin-top: 10%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+.arrow .arrow-line{
+    font-size: 3.5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s ease, color 0.3s ease;
+    animation: bounce 2s infinite;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    cursor: pointer;
+    position: relative;
+    z-index: 50;
+}
+
+.arrow .arrow-line a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+/* Add subtle glow effect */
+.arrow .arrow-line::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, rgba(187, 119, 35, 0.3) 0%, rgba(187, 119, 35, 0) 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    filter: blur(2px);
+}
+
+/* Bouncing animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(-20px) scale(1);
+    }
+    50% {
+        transform: translateY(0px) scale(1);
+    }
+}
+
+/* Enhanced hover effect */
+.arrow .arrow-line:hover {
+    animation: bounce 1s infinite;
+    transform: translateY(-3px) scale(1.1);
+}
+
+.arrow .arrow-line:hover a {
+    background: rgba(187, 119, 35, 0.1);
+    color: #bb7723;
+    box-shadow: 0 4px 15px rgba(187, 119, 35, 0.3);
+}
+
+.arrow .arrow-line:hover::after {
+    opacity: 1;
+}
+
+/* Click feedback */
+.arrow .arrow-line:active {
+    transform: translateY(-1px) scale(0.95);
+}
+
+/* Responsive animation adjustments */
+@media screen and (max-width: 768px) {
+    .arrow .arrow-line {
+        font-size: 2rem;
+        animation: bounce 3.5s infinite;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .arrow .arrow-line {
+        font-size: 1.8rem;
+        animation: bounce 2s infinite;
+    }
+}
+
+/* Accessibility: respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .arrow .arrow-line {
+        animation: none;
+        transition: color 0.3s ease;
+    }
+    
+    .arrow .arrow-line:hover {
+        animation: none;
+        transform: none;
+    }
+    
+    .arrow .arrow-line::after {
+        display: none;
+    }
+}
+
+/* Hero background effects */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0; 
+    z-index: -1;
+}
+
+/* Floating animation for background effects */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.hero::before {
+    animation: float 6s ease-in-out infinite;
+}
+
+.intro {
+    max-width: 900px;
+    width: 100%;
+    margin: 8% auto;
+    color: var(--text-secondary);
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    line-height: 1.6;
+    position: relative;
+}
+
+/* Main heading with adaptive typography */
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: var(--text-primary);
+    margin: 0 0 clamp(1rem, 2.5vw, 2rem) 0;
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, #f1e9e9, #bb7723);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Description text */
+.hero-description {
+    margin-top: clamp(0.75rem, 2vw, 1.5rem);
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-weight: 400;
+    opacity: 0.95;
+}
+
+/* Enhanced responsive typography system */
+@media screen and (max-width: 1400px) {
+    .hero h1 {
+        font-size: clamp(2.2rem, 5.5vw, 3.5rem);
+    }
+    
+    .intro {
+        font-size: clamp(0.95rem, 2.3vw, 1.4rem);
+    }
+    
+    .hero-description {
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .hero {
+        min-height: 75vh;
+        padding: clamp(2rem, 4vw, 4rem);
+    }
+    
+    .hero h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
+    
+    .intro {
+        font-size: clamp(0.9rem, 2.2vw, 1.3rem);
+    }
+    
+    .hero-description {
+        font-size: clamp(0.85rem, 1.9vw, 1rem);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .hero {
+        min-height: 70vh;
+        padding: clamp(1.75rem, 3.5vw, 3.5rem);
+    }
+    
+    .hero h1 {
+        font-size: clamp(1.8rem, 4.5vw, 2.7rem);
+    }
+    
+    .intro {
+        font-size: clamp(0.85rem, 2.1vw, 1.2rem);
+    }
+    
+    .hero-description {
+        font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .hero {
+        min-height: 68vh;
+        padding: clamp(1.5rem, 3vw, 3rem);
+    }
+    
+    .hero h1 {
+        font-size: clamp(1.6rem, 4vw, 2.4rem);
+    }
+    
+    .intro {
+        font-size: clamp(0.8rem, 2vw, 1.1rem);
+    }
+    
+    .hero-description {
+        font-size: clamp(0.75rem, 1.7vw, 0.9rem);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        min-height: 65vh;
+        max-height: 80vh;
+        padding: clamp(1.25rem, 2.5vw, 2.5rem);
+    }
+    
+    .hero h1 {
+        font-size: clamp(1.4rem, 4.5vw, 2.1rem);
+        line-height: 1.2;
+        margin-bottom: clamp(0.75rem, 2vw, 1.25rem);
+    }
+    
+    .intro {
+        font-size: clamp(0.75rem, 2.2vw, 1rem);
+        line-height: 1.6;
+    }
+    
+    .hero-description {
+        font-size: clamp(0.7rem, 1.8vw, 0.85rem);
+        line-height: 1.6;
+    }
+    
+    /* Reduce motion for mobile */
+    .hero::before {
+        animation: float 8s ease-in-out infinite;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hero {
+        min-height: 60vh;
+        padding: clamp(1rem, 2vw, 2rem);
+    }
+    
+    .hero h1 {
+        font-size: clamp(1.3rem, 5vw, 1.9rem);
+        margin-bottom: clamp(0.6rem, 1.8vw, 1rem);
+    }
+    
+    .intro {
+        font-size: clamp(0.7rem, 2vw, 0.95rem);
+    }
+    
+    .hero-description {
+        font-size: clamp(0.65rem, 1.7vw, 0.8rem);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero {
+        min-height: 55vh;
+        padding: clamp(0.8rem, 1.8vw, 1.5rem);
+    }
+    
+    .hero h1 {
+        font-size: clamp(1.2rem, 5.5vw, 1.7rem);
+        margin-bottom: clamp(0.5rem, 1.6vw, 0.8rem);
+    }
+    
+    .intro {
+        font-size: clamp(0.65rem, 1.9vw, 0.9rem);
+        line-height: 1.5;
+    }
+    
+    .hero-description {
+        font-size: clamp(0.6rem, 1.6vw, 0.75rem);
+        line-height: 1.5;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .hero {
+        min-height: 50vh;
+        padding: clamp(0.6rem, 1.5vw, 1.2rem);
+    }
+    
+    .hero h1 {
+        font-size: clamp(1.1rem, 6vw, 1.5rem);
+        margin-bottom: clamp(0.4rem, 1.4vw, 0.7rem);
+    }
+    
+    .intro {
+        font-size: clamp(0.6rem, 1.8vw, 0.85rem);
+        line-height: 1.5;
+    }
+    
+    .hero-description {
+        font-size: clamp(0.55rem, 1.5vw, 0.7rem);
+    }
+}
+
+/* Adjust for smaller screens with less height */
+@media screen and (max-height: 700px) {
+    .hero {
+        min-height: 70vh;
+        max-height: 90vh;
+        padding: clamp(1rem, 2.5vw, 2rem);
+    }
+    
+    .hero h1 {
+        font-size: clamp(1.5rem, 4.5vw, 2.2rem);
+    }
+    
+    .intro {
+        font-size: clamp(0.8rem, 2vw, 1rem);
+    }
+    
+    .hero-description {
+        font-size: clamp(0.75rem, 1.8vw, 0.9rem);
+    }
+}
+
+/* Improve text readability on high-density displays */
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+    .hero h1, .hero-description {
+        font-smooth: always;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Better performance on mobile devices */
+@media screen and (max-width: 768px) {
+    .hero {
+        will-change: transform;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+    
+    .hero h1 {
+        transform: translateZ(0);
+        margin-top: 20vh;
+        font-size: 3rem;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .hero::before {
+        animation: none;
+    }
+    
+    .hero h1 {
+        animation: none;
+        background: var(--text-primary);
+        -webkit-background-clip: initial;
+        background-clip: initial;
+        -webkit-text-fill-color: initial;
+    }
+}
+
+/* Print styles */
+@media print {
+    .hero {
+        background: white;
+        color: black;
+        min-height: auto;
+        padding: 1rem;
+    }
+    
+    .hero::before {
+        display: none;
+    }
+    
+    .hero h1 {
+        color: black;
+        background: transparent;
+        -webkit-text-fill-color: initial;
+        text-shadow: none;
+    }
+    
+    .hero-description {
+        color: black;
+    }
+}
