@@ -127,7 +127,7 @@ function Navbar() {
       {/* Side menu */}
       <div className={`side-menu ${isMenuOpen ? 'active' : ''}`}>
         <div className="side-menu-header">
-          <h2 className="side-menu-logo">Zyora</h2>
+          <h2 className="side-menu-logo">Swarnav Das</h2>
           <div className="close-btn" onClick={closeMenu}>
             <span className="close-line close-line-1"></span>
             <span className="close-line close-line-2"></span>
@@ -178,7 +178,9 @@ function Navbar() {
       {/* Traditional navbar for desktop */}
       <div className='navbar'>
         <div className="nav-cont">
-          <h1 className="nav-logo">SS</h1>
+          <div className="nav-logo">
+            <img src="/icons/logo.svg" alt="Logo" className="nav-logo-img" />
+          </div>
           <div className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
             <span className={isMenuOpen ? 'bar open' : 'bar'}></span>
             <span className={isMenuOpen ? 'bar open' : 'bar'}></span>

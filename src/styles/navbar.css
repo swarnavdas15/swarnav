@@ -427,6 +427,84 @@
     margin-left: 2%;
     width: 200px;
 }
+.nav-logo:hover {
+    text-shadow: 0 0 10px rgba(187, 119, 35, 0.6);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+/* Logo image styles for responsive sizing */
+.nav-logo-img {
+    width: 100%;
+    margin-top: 6%;
+    height: auto;
+    max-width: 180px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+/* Responsive logo sizing for different screen sizes */
+@media screen and (max-width: 1400px) {
+    .nav-logo-img {
+        max-width: 160px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .nav-logo-img {
+        max-width: 150px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .nav-logo-img {
+        max-width: 140px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .nav-logo-img {
+        max-width: 130px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-logo-img {
+        max-width: 120px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .nav-logo-img {
+        max-width: 110px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-logo-img {
+        max-width: 100px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .nav-logo-img {
+        max-width: 90px;
+    }
+}
+
+/* Ensure logo maintains aspect ratio and scales smoothly */
+@media screen and (max-height: 700px) {
+    .nav-logo-img {
+        max-width: 140px;
+    }
+}
+
+/* Hover effect for logo */
+.nav-logo-img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
 
 .nav-cont ul{
     margin: 0;
