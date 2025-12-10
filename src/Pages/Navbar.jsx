@@ -162,13 +162,13 @@ function Navbar() {
         <div className="side-menu-footer">
           <p>Connect with me</p>
           <div className="social-links">
-            <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" className="social-link">
+            <a href="https://www.linkedin.com/in/swarnav-das-6929542bb" target="_blank" rel="noopener noreferrer" className="social-link">
               <img src="/icons/linkedin.svg" alt="LinkedIn" className="social-icon" />
             </a>
-            <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" className="social-link">
+            <a href="https://github.com/swarnavdas15" target="_blank" rel="noopener noreferrer" className="social-link">
               <img src="/icons/github.svg" alt="GitHub" className="social-icon" />
             </a>
-            <a href="https://instagram.com/your-username" target="_blank" rel="noopener noreferrer" className="social-link">
+            <a href="https://www.instagram.com/m_roni2/" target="_blank" rel="noopener noreferrer" className="social-link">
               <img src="/icons/instagram.svg" alt="Instagram" className="social-icon" />
             </a>
           </div>
