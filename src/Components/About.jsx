@@ -19,7 +19,7 @@ function About() {
     bio: 'Passionate developer and security enthusiast crafting modern web applications with a focus on performance, security, and user experience. I bridge the gap between frontend innovation and backend reliability while maintaining a security-first mindset.',
     experience: '1+ years in web development & cybersecurity',
     image: 'https://raw.githubusercontent.com/swarnavdas15/my-resources/refs/heads/main/profile.png',
-    certifications: ['AWS Certified', 'Security+ Certified', 'React Developer'],
+    certifications: ['ECITK-Ethical Hacking', 'React Developer'],
     skills: ['JavaScript', 'React', 'Node.js', 'AWS', 'Security', 'DevOps'],
     links: [
       { label: 'GitHub', href: 'https://github.com', icon: '/icons/github.svg' },
